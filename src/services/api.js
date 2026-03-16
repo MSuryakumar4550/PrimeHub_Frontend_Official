@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api", // backend base
+  baseURL: "https://prime-hub-student-management-system-for-onrender.com/api",
   headers: {
     "Content-Type": "application/json"
   }
