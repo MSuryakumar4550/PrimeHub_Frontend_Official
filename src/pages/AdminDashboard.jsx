@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./AdminDashboard.css";
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://prime-hub-student-management-system-for.onrender.com";
 
 const SECTIONS = [
   { id: "overview", label: "Overview" },

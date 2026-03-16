@@ -13,6 +13,7 @@ const LoginPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
 
+    console.log(error);
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
@@ -23,7 +24,9 @@ const LoginPage = () => {
             // 1. Trigger only the context login.
             // 2. AuthContext handles the api.post, localStorage, and token for you.
             const role = await login(email, password);
-
+            // // console.log(role);
+            // console.log(email);
+            // console.log(password);
             // 3. CLEAN REDIRECT: Use the role returned by the context function
             if (role === 'ADMIN') {
                 navigate('/admin-dashboard');
@@ -37,7 +40,7 @@ const LoginPage = () => {
 
         } catch (err) {
             // TRAP AVOIDANCE: Catch the 401/500 errors from the backend
-            console.error("Login Failed:", err);
+            // console.log(role);
             setError('Invalid credentials or System Offline. Access Denied.');
         } finally {
             setIsLoading(false);

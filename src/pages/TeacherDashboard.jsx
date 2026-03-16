@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./TeacherDashboard.css";
 
-const api = axios.create({ baseURL: "http://localhost:8080" });
+const api = axios.create({ baseURL: "https://prime-hub-student-management-system-for.onrender.com" });
 
 api.interceptors.request.use(
   (config) => {

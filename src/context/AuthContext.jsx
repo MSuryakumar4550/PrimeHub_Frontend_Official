@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       });
 
       const userData = response.data;
-
+      // console.log(userData.token);
         localStorage.setItem("primehub_token", userData.token);
         localStorage.setItem("primehub_role", userData.role);    
         localStorage.setItem("primehub_name", userData.name);    
