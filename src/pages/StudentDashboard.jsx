@@ -197,6 +197,7 @@ const StudentDashboard = () => {
   };
 
   useEffect(() => {
+    if (!studentId) return; 
     const init = async () => {
       setOverviewLoading(true);
       try {
@@ -206,7 +207,7 @@ const StudentDashboard = () => {
       }
     };
     init();
-  }, []);
+  }, [studentId]);
 
   // ── HANDLERS ──────────────────────────────────────────────────
 
