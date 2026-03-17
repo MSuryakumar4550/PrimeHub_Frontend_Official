@@ -390,6 +390,7 @@ const AdminDashboard = () => {
           <thead>
             <tr>
               <th>Leave ID</th>
+              <th>Student Name</th>
               <th>Student ID</th>
               <th>Reason</th>
               <th>From</th>
@@ -401,7 +402,8 @@ const AdminDashboard = () => {
             {allLeaves.map((l) => (
               <tr key={l.leaveId || l.id}>
                 <td>{l.leaveId || l.id}</td>
-                <td>{l.studentName || l.studentId || l.studentUserId}</td>
+                <td>{l.student?.name || "-"}</td>
+                <td>{l.student?.userId || "-"}</td>
                 <td>{l.reason}</td>
                 <td>{l.startDate}</td>
                 <td>{l.endDate}</td>
@@ -414,7 +416,7 @@ const AdminDashboard = () => {
             ))}
             {allLeaves.length === 0 && (
               <tr>
-                <td colSpan={6} className="admin-empty">
+                <td colSpan={7} className="admin-empty">
                   No pending leave requests.
                 </td>
               </tr>
