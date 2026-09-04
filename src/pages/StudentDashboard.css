@@ -1,0 +1,147 @@
+/* Nickelfox Dark Theme for Student Dashboard */
+
+.student-main-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.student-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.student-card {
+  background-color: var(--bg-panel);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.student-card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.student-card-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.student-form-card {
+  background-color: var(--bg-panel);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.02);
+  margin-bottom: 1.5rem;
+}
+
+.student-form-row {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.student-input, .student-textarea, .student-select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-sm);
+  padding: 0.8rem 1rem;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.student-input:focus, .student-textarea:focus, .student-select:focus {
+  outline: none;
+  border-color: var(--bg-active);
+}
+
+.student-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.student-btn-primary {
+  background-color: var(--bg-active);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.student-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.student-btn-ghost {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--border-radius-sm);
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.student-btn-ghost:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-weight: 500;
+}
+
+.student-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.text-error {
+  color: var(--mac-red);
+}
+
+.text-success {
+  color: var(--mac-green);
+}
+
+.badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge.open { background: rgba(39, 201, 63, 0.1); color: var(--mac-green); }
+.badge.completed { background: rgba(138, 95, 229, 0.1); color: var(--accent-purple); }
+.badge.approved { background: rgba(39, 201, 63, 0.1); color: var(--mac-green); }
+.badge.pending { background: rgba(245, 185, 66, 0.1); color: var(--accent-yellow); }
+.badge.rejected { background: rgba(255, 95, 86, 0.1); color: var(--mac-red); }
