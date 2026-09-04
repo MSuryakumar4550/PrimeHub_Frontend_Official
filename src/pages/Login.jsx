@@ -29,107 +29,97 @@ const LoginPage = () => {
                 navigate('/');
             }
         } catch (err) {
-            setError('Invalid credentials or System Offline. Access Denied.');
+            setError('Invalid credentials. Please verify and try again.');
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="login-page">
+        <div className="login-corporate-container">
             
-            {/* LEFT HERO SECTION */}
-            <div className="login-hero">
-                <div className="hero-content">
-                    <div className="logo-icon-large">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            <circle cx="12" cy="11" r="1" />
-                            <path d="M12 12v3" />
-                        </svg>
-                    </div>
-                    <h1>PRIME HUB</h1>
-                    <h2>The Next-Gen Education Management Platform</h2>
-                    <p>Experience seamless administration, interactive learning, and secure identity management all in one centralized workspace.</p>
-                    
-                    <div className="hero-features">
-                        <div className="feature-item">
-                            <span className="feature-dot"></span>
-                            <span>Enterprise-grade Security</span>
-                        </div>
-                        <div className="feature-item">
-                            <span className="feature-dot"></span>
-                            <span>Real-time Analytics</span>
-                        </div>
-                        <div className="feature-item">
-                            <span className="feature-dot"></span>
-                            <span>Collaborative Spaces</span>
-                        </div>
+            {/* LEFT: IMAGE PANE */}
+            <div className="login-image-pane">
+                <div className="image-overlay">
+                    <div className="overlay-content">
+                        <h2>Empowering Education.</h2>
+                        <p>Streamline your institution's operations with our next-generation management platform.</p>
                     </div>
                 </div>
-                
-                {/* Decorative Elements */}
-                <div className="hero-decoration-1"></div>
-                <div className="hero-decoration-2"></div>
             </div>
 
-            {/* RIGHT LOGIN SECTION */}
-            <div className="login-form-container">
-                <div className="login-card">
-                    <h2>Secure Sign-in</h2>
-                    <p className="login-subtitle">Enter your credentials to access your workspace</p>
+            {/* RIGHT: FORM PANE */}
+            <div className="login-form-pane">
+                <div className="form-wrapper">
+                    
+                    <div className="brand-header">
+                        <div className="brand-logo">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <circle cx="12" cy="11" r="1" />
+                                <path d="M12 12v3" />
+                            </svg>
+                        </div>
+                        <h1>Prime Hub</h1>
+                    </div>
+
+                    <div className="form-header">
+                        <h2>Welcome back</h2>
+                        <p>Please enter your details to sign in.</p>
+                    </div>
 
                     {error && (
-                        <div className="error-msg">
+                        <div className="corporate-error-msg">
                             {error}
                         </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className="auth-form">
-                        <div className="input-group">
-                            <label className="input-label">Work Email</label>
+                    <form onSubmit={handleSubmit} className="corporate-auth-form">
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
                             <input 
+                                id="email"
                                 type="email" 
                                 required 
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="input-field"
-                                placeholder="name@college.edu"
+                                placeholder="Enter your email"
                                 autoComplete="email"
                             />
                         </div>
 
-                        <div className="input-group">
-                            <label className="input-label">Security Token</label>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
                             <input 
+                                id="password"
                                 type="password" 
                                 required 
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="input-field"
                                 placeholder="••••••••"
                                 autoComplete="current-password"
                             />
                         </div>
 
+                        <div className="form-options">
+                            <label className="remember-me">
+                                <input type="checkbox" />
+                                <span>Remember for 30 days</span>
+                            </label>
+                            <button type="button" className="forgot-password">Forgot password?</button>
+                        </div>
+
                         <button 
                             type="submit" 
                             disabled={isLoading}
-                            className="login-btn"
+                            className="corporate-submit-btn"
                         >
-                            {isLoading ? 'Authenticating...' : 'Authorize Access'}
+                            {isLoading ? 'Signing in...' : 'Sign in'}
                         </button>
                     </form>
 
-                    <div className="auth-footer">
-                        <div className="footer-links">
-                            <button className="footer-link">Help Center</button>
-                            <button className="footer-link">Forgot Credentials</button>
-                        </div>
-                        <p className="security-note">
-                            Authorized personnel only. All access attempts are 
-                            monitored and logged by system security.
-                        </p>
+                    <div className="form-footer">
+                        <p>Don't have an account? <button className="contact-admin">Contact Admin</button></p>
                     </div>
                 </div>
             </div>
